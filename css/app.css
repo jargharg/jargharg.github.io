@@ -6,7 +6,7 @@ body {
   transition: 0.3s; }
 
 .container {
-  width: 30%;
+  width: 80%;
   font-family: 'Overpass Mono', serif;
   text-transform: uppercase;
   margin: 180px auto;
@@ -28,5 +28,10 @@ body {
       font-size: 1.5em;
       color: crimson;
       cursor: pointer; }
+
+@media (max-width: 1023px) {
+  .container {
+    font-size: 4em;
+    margin: 100px auto; } }
 
 /*# sourceMappingURL=app.css.map */
