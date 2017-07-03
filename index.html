@@ -6,8 +6,11 @@
 	<style type="text/css">
 	/* Full site coming soon, don't judge this CSS! */
 		body {
-			background: aliceblue;
+			margin: 0;
+			padding: 0;
+			background: #FFEB00;
 			color: slategrey;
+			transition: 0.3s;			
 		}
 		.container {
 			width: 30%;
@@ -41,6 +44,16 @@
 			cursor: pointer;
 		}
 	</style>
+	<script type="text/javascript" src="http://www.jarodhargreav.es/backstamp-archive/js/external/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+
+			$("a").click(function(){
+				var newBGColor = $("a").attr("data-bgcolor")
+				$("body").css("background",newBGColor)
+			})
+		})
+	</script>
 </head>
 <body>
 	<div class="container">
@@ -51,7 +64,7 @@
 
 
 		<div class="content">
-			<a href="/autopoetry">Autopoetry</a>
+			<a href="http://www.jarodhargreav.es/autopoetry" data-bgcolor="aliceblue">Autopoetry</a>
 		</div>
 
 		<div class="content">
