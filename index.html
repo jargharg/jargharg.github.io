@@ -3,57 +3,9 @@
 <head>
 	<title>Jarod Hargreaves</title>
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Overpass%20Mono">
-	<style type="text/css">
-	/* Full site coming soon, don't judge this CSS! */
-		body {
-			margin: 0;
-			padding: 0;
-			background: #FFEB00;
-			color: slategrey;
-			transition: 0.3s;			
-		}
-		.container {
-			width: 30%;
-			font-family: 'Overpass Mono', serif;
-			text-transform: uppercase;
-			margin: 180px auto;
-			text-align: center;
-			font-size: 2.2em;
-			user-select: none;
-			cursor: default;
-		}
-		span {
-			display: block;
-			line-height: 1.15em;
-			letter-spacing: 0.15em;
-			text-shadow: 3px 3px 1px rgba(0,0,0,0.15);
-		}
-		.firstName {
-			color: crimson;
-		}
-		.lastName {
-			color: slategrey;
-		}
-		.content {
-			margin: 30px 0;
-			font-size: 0.25em;
-		}
-		.content a {
-			font-size: 1.5em;
-			color: crimson;
-			cursor: pointer;
-		}
-	</style>
+    <link rel="stylesheet" type="text/css" href="css/app.css">
 	<script type="text/javascript" src="http://www.jarodhargreav.es/backstamp-archive/js/external/jquery-1.10.2.min.js"></script>
-	<script type="text/javascript">
-		$(document).ready(function(){
-
-			$("a").click(function(){
-				var newBGColor = $("a").attr("data-bgcolor")
-				$("body").css("background",newBGColor)
-			})
-		})
-	</script>
+	<script type="text/javascript" src="js/app.js"></script>
 </head>
 <body>
 	<div class="container">

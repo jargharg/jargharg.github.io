@@ -1,0 +1,35 @@
+body {
+	margin: 0;
+	padding: 0;
+	background: #FFEB00;
+	color: slategrey;
+	transition: 0.3s;			
+}
+.container {
+	width: 30%;
+	font-family: 'Overpass Mono', serif;
+	text-transform: uppercase;
+	margin: 180px auto;
+	text-align: center;
+	font-size: 2.2em;
+	user-select: none;
+	cursor: default;
+	span {
+		display: block;
+		line-height: 1.15em;
+		letter-spacing: 0.15em;
+		text-shadow: 3px 3px 1px rgba(0,0,0,0.15);
+	}
+	.firstName {
+		color: crimson;
+	}
+	.content {
+		margin: 30px 0;
+		font-size: 0.25em;
+		a {
+			font-size: 1.5em;
+			color: crimson;
+			cursor: pointer;
+		}
+	}
+}
