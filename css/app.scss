@@ -22,11 +22,12 @@ body {
 		display: inline-block;
 		font-size: 2.5em;
 		line-height: 1.2em;
-		letter-spacing: 0.3em;
+		letter-spacing: 0.2em;
 		&:hover {
-			background: url();
+			background-image: url("../images/me.jpg");
+			background-size: cover;
 			span {
-				opacity: 0.1;
+				opacity: 0;
 			}
 		}
 		span {
