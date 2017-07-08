@@ -6,7 +6,7 @@ body {
   transition: 0.3s; }
 
 .container {
-  width: 80%;
+  width: 100%;
   font-family: 'Overpass Mono', serif;
   text-transform: uppercase;
   margin: 180px auto;
@@ -14,24 +14,57 @@ body {
   font-size: 2.2em;
   user-select: none;
   cursor: default; }
-  .container span {
+  .container .name span {
     display: block;
     line-height: 1.15em;
     letter-spacing: 0.15em;
-    text-shadow: 3px 3px 1px rgba(0, 0, 0, 0.15); }
-  .container .firstName {
-    color: crimson; }
+    text-shadow: 1px 1px #FFE400, 2px 2px slategrey; }
+    .container .name span.firstName {
+      color: crimson; }
   .container .content {
     margin: 30px 0;
-    font-size: 0.25em; }
-    .container .content a {
-      font-size: 1.5em;
+    font-size: 0.5em; }
+    .container .content h2 {
+      font-size: 1em;
+      font-weight: normal;
+      margin: 1em 0 0; }
+    .container .content .linkSection a {
       color: crimson;
       cursor: pointer; }
+    .container .content .linkSection input[type="radio"] {
+      display: none; }
+      .container .content .linkSection input[type="radio"] + label {
+        color: crimson;
+        margin: 0;
+        font-size: 1em;
+        text-decoration: underline;
+        cursor: pointer; }
+      .container .content .linkSection input[type="radio"]:checked ~ .hiddenSection {
+        height: 100%;
+        padding: 11px 15%;
+        box-shadow: inset 0 4px 4px -4px gainsboro, inset 0 -4px 4px -4px gainsboro; }
+      .container .content .linkSection input[type="radio"]:checked + label {
+        cursor: default;
+        text-decoration: none; }
+    .container .content .linkSection .hiddenSection {
+      height: 0;
+      overflow: hidden;
+      background: white;
+      box-sizing: border-box; }
+      .container .content .linkSection .hiddenSection p {
+        font-size: 0.8em;
+        text-transform: none; }
+      .container .content .linkSection .hiddenSection a {
+        font-size: 0.8em;
+        margin: 0 8px; }
+    .container .content#more {
+      font-size: 0.25em; }
 
 @media (max-width: 768px) {
   .container {
     font-size: 4em;
-    margin: 25% auto 0; } }
+    margin: 25% auto 0; }
+    .container .content input[type="radio"]:checked ~ .hiddenLinks {
+      height: 40px; } }
 
 /*# sourceMappingURL=app.css.map */

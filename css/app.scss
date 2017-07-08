@@ -6,7 +6,7 @@ body {
 	transition: 0.3s;	
 }
 .container {
-	width: 80%;
+	width: 100%;
 	font-family: 'Overpass Mono', serif;
 	text-transform: uppercase;
 	margin: 180px auto;
@@ -14,22 +14,67 @@ body {
 	font-size: 2.2em;
 	user-select: none;
 	cursor: default;
-	span {
+	.name span {
 		display: block;
 		line-height: 1.15em;
 		letter-spacing: 0.15em;
-		text-shadow: 3px 3px 1px rgba(0,0,0,0.15);
-	}
-	.firstName {
-		color: crimson;
+		text-shadow: 1px 1px #FFE400, 2px 2px slategrey;
+		&.firstName {
+			color: crimson;
+		}
 	}
 	.content {
 		margin: 30px 0;
-		font-size: 0.25em;
-		a {
-			font-size: 1.5em;
-			color: crimson;
-			cursor: pointer;
+		font-size: 0.5em;
+		h2 {
+			font-size: 1em;
+			font-weight: normal;
+			margin: 1em 0 0;
+		}
+		.linkSection {
+			a {
+				color: crimson;
+				cursor: pointer;
+			}
+			input[type="radio"]{
+				display: none;
+				& + label {
+					color: crimson;
+					margin: 0;
+					font-size: 1em;
+					text-decoration: underline;
+					cursor: pointer;
+				}
+				&:checked {
+					& ~ .hiddenSection {
+						height: 100%;
+						padding: 11px 15%;
+						box-shadow: inset 0 4px 4px -4px gainsboro, inset 0 -4px 4px -4px gainsboro;
+					}
+					& + label {
+						cursor: default;
+						text-decoration: none;
+					}
+				}
+			}
+			.hiddenSection {
+				height: 0;
+				overflow: hidden;
+				background: white;
+				box-sizing: border-box;
+				//transition: 0.2s all;
+				p {
+					font-size: 0.8em;
+					text-transform: none;
+				}
+				a {
+					font-size: 0.8em;
+					margin: 0 8px;
+				}
+			}
+		}
+		&#more {
+			font-size: 0.25em;
 		}
 	}
 }
@@ -38,5 +83,10 @@ body {
 	.container {
 		font-size: 4em;
 		margin: 25% auto 0;
+		.content {
+			input[type="radio"]:checked ~ .hiddenLinks {
+				height: 40px;
+			}
+		}
 	}
 }
