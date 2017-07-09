@@ -1,42 +1,142 @@
+$font-stack: 'Source Code Pro', monospace;
+$bg-color: #FFE000;
+$primary-color: crimson;
+$secondary-color: slategrey;
+
+
 body {
 	margin: 0;
 	padding: 0;
-	background: #FFE400;
-	color: slategrey;
+	background: $bg-color;
+	color: $secondary-color;
 	transition: 0.3s;	
 }
 .container {
-	width: 80%;
-	font-family: 'Overpass Mono', serif;
-	text-transform: uppercase;
-	margin: 180px auto;
+	width: 100%;
+	font-family: $font-stack;
+	margin: 20px auto 0;
 	text-align: center;
-	font-size: 2.2em;
-	user-select: none;
 	cursor: default;
-	span {
-		display: block;
-		line-height: 1.15em;
-		letter-spacing: 0.15em;
-		text-shadow: 3px 3px 1px rgba(0,0,0,0.15);
-	}
-	.firstName {
-		color: crimson;
+	.name {
+		position: relative;
+		display: inline-block;
+		background-image: url();
+		background-size: cover;
+		background-position: top center;
+		opacity: 1;
+		&:hover {
+			background-image: url("../images/me.jpg");
+			span {
+				opacity: 0;
+			}
+			.caption {
+				display: block;
+			}
+		}
+		span {
+			text-transform: uppercase;
+			font-size: 2.5em;
+			line-height: 1.2em;
+			letter-spacing: 0.2em;
+			margin-left: 0.3em;
+			opacity: 1;
+			display: block;
+			text-shadow: 1px 1px $bg-color, 2px 2px $secondary-color;
+			&:nth-child(1) {
+				margin-top: 130px;
+				color: $primary-color;
+			}
+			&:nth-child(odd) {
+				animation: slideRight 0.5s;
+			}
+			&:nth-child(even) {
+				animation: slideLeft 0.5s;
+			}
+		}
+		.caption {
+			display: none;
+			position: absolute;
+			padding-top: 5px;
+			text-align: center;
+			width: 100%;
+			font-size: 0.6em;
+			i {
+				font-style: normal;
+			}
+		}
 	}
 	.content {
 		margin: 30px 0;
-		font-size: 0.25em;
+		font-size: 1em;
+		animation: slideUp 0.5s;
+		h2 {
+			font-size: 1em;
+			font-weight: normal;
+			margin: 1em 0 0;
+		}
 		a {
-			font-size: 1.5em;
-			color: crimson;
+			color: $primary-color;
 			cursor: pointer;
+		}
+		p {
+			max-width: 600px;
+			margin: 10px auto;
+			padding: 0 25px;
+			font-size: 0.8em;
+			text-transform: none;
+			text-align: justify;
+			user-select: auto;
+			input[type="checkbox"] {
+				display: none;
+				&:checked ~ .aboutMeHidden {
+					display: inline;
+				}
+			}
+			label {
+				color: $primary-color;
+				text-decoration: underline;
+				cursor: pointer;
+			}
+			.aboutMeHidden {
+				display: none;
+				color: $secondary-color;
+			}
+			&#currentProject {
+				font-weight: bold;
+			}
 		}
 	}
 }
 
+@keyframes slideLeft {
+	from { transform: translateX(1000px); }
+	to { transform: translateX(0px); }
+}
+@keyframes slideRight {
+	from { transform: translateX(-1000px); }
+	to { transform: translateX(0px); }
+}
+@keyframes slideUp {
+	from { transform: translateY(1000px); }
+	to { transform: translateY(0px); }
+}
+
 @media (max-width: 768px) {
 	.container {
-		font-size: 4em;
-		margin: 25% auto 0;
+		font-size: 1.2em;
+		.name span {
+			font-size: 3.5em;
+			&:nth-child(1) {
+				margin-top: 10%;
+			}
+		}
+		.caption i {
+			display: none;
+		}
+		.content {
+			input[type="radio"]:checked ~ .hiddenLinks {
+				height: 40px;
+			}
+		}
 	}
 }
