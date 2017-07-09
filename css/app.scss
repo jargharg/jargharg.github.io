@@ -55,6 +55,7 @@ body {
 	.content {
 		margin: 30px 0;
 		font-size: 1em;
+		animation: slideUp 0.5s;
 		h2 {
 			font-size: 1em;
 			font-weight: normal;
@@ -87,12 +88,6 @@ body {
 				display: none;
 				color: $secondary-color;
 			}
-			&:nth-child(odd) {
-				animation: slideRight 0.5s;
-			}
-			&:nth-child(even) {
-				animation: slideLeft 0.5s;
-			}
 		}
 	}
 }
@@ -105,6 +100,10 @@ body {
 	from { transform: translateX(-1000px); }
 	to { transform: translateX(0px); }
 }
+@keyframes slideUp {
+	from { transform: translateY(1000px); }
+	to { transform: translateY(0px); }
+}
 
 @media (max-width: 768px) {
 	.container {
@@ -112,7 +111,7 @@ body {
 		.name {
 			font-size: 3.5em;
 			span:nth-child(1) {
-				margin-top: 15%;
+				margin-top: 10%;
 			}
 		}
 		.content {

@@ -41,7 +41,8 @@ body {
         animation: slideLeft 0.5s; }
   .container .content {
     margin: 30px 0;
-    font-size: 1em; }
+    font-size: 1em;
+    animation: slideUp 0.5s; }
     .container .content h2 {
       font-size: 1em;
       font-weight: normal;
@@ -68,10 +69,6 @@ body {
       .container .content p .aboutMeHidden {
         display: none;
         color: slategrey; }
-      .container .content p:nth-child(odd) {
-        animation: slideRight 0.5s; }
-      .container .content p:nth-child(even) {
-        animation: slideLeft 0.5s; }
 
 @keyframes slideLeft {
   from {
@@ -83,13 +80,18 @@ body {
     transform: translateX(-1000px); }
   to {
     transform: translateX(0px); } }
+@keyframes slideUp {
+  from {
+    transform: translateY(1000px); }
+  to {
+    transform: translateY(0px); } }
 @media (max-width: 768px) {
   .container {
     font-size: 1.2em; }
     .container .name {
       font-size: 3.5em; }
       .container .name span:nth-child(1) {
-        margin-top: 15%; }
+        margin-top: 10%; }
     .container .content input[type="radio"]:checked ~ .hiddenLinks {
       height: 40px; } }
 
