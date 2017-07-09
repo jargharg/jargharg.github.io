@@ -8,30 +8,31 @@ body {
 .container {
   width: 100%;
   font-family: "Source Code Pro", monospace;
-  text-transform: uppercase;
   margin: 20px auto 0;
   text-align: center;
   cursor: default; }
   .container .name {
+    position: relative;
     display: inline-block;
-    font-size: 2.5em;
-    line-height: 1.2em;
-    letter-spacing: 0.2em;
     background-image: url();
     background-size: cover;
     background-position: top center;
-    transition: 0.2s; }
+    opacity: 1; }
     .container .name:hover {
       background-image: url("../images/me.jpg"); }
       .container .name:hover span {
         opacity: 0; }
+      .container .name:hover .caption {
+        opacity: 1; }
     .container .name span {
+      text-transform: uppercase;
+      font-size: 2.5em;
+      line-height: 1.2em;
+      letter-spacing: 0.2em;
       margin-left: 0.3em;
       opacity: 1;
       display: block;
-      text-shadow: 1px 1px #FFE000, 2px 2px slategrey;
-      user-select: none;
-      transition: 0.2s; }
+      text-shadow: 1px 1px #FFE000, 2px 2px slategrey; }
       .container .name span:nth-child(1) {
         margin-top: 130px;
         color: crimson; }
@@ -39,6 +40,15 @@ body {
         animation: slideRight 0.5s; }
       .container .name span:nth-child(even) {
         animation: slideLeft 0.5s; }
+    .container .name .caption {
+      opacity: 0;
+      position: absolute;
+      padding-top: 5px;
+      text-align: center;
+      width: 100%;
+      font-size: 0.6em; }
+      .container .name .caption i {
+        font-style: normal; }
   .container .content {
     margin: 30px 0;
     font-size: 1em;
@@ -69,6 +79,8 @@ body {
       .container .content p .aboutMeHidden {
         display: none;
         color: slategrey; }
+      .container .content p#currentProject {
+        font-weight: bold; }
 
 @keyframes slideLeft {
   from {
@@ -88,10 +100,12 @@ body {
 @media (max-width: 768px) {
   .container {
     font-size: 1.2em; }
-    .container .name {
+    .container .name span {
       font-size: 3.5em; }
       .container .name span:nth-child(1) {
         margin-top: 10%; }
+    .container .caption i {
+      display: none; }
     .container .content input[type="radio"]:checked ~ .hiddenLinks {
       height: 40px; } }
 

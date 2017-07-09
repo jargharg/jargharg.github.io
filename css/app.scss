@@ -14,32 +14,34 @@ body {
 .container {
 	width: 100%;
 	font-family: $font-stack;
-	text-transform: uppercase;
 	margin: 20px auto 0;
 	text-align: center;
 	cursor: default;
 	.name {
+		position: relative;
 		display: inline-block;
-		font-size: 2.5em;
-		line-height: 1.2em;
-		letter-spacing: 0.2em;
 		background-image: url();
 		background-size: cover;
 		background-position: top center;
-		transition: 0.2s;
+		opacity: 1;
 		&:hover {
 			background-image: url("../images/me.jpg");
 			span {
 				opacity: 0;
 			}
+			.caption {
+				opacity: 1;
+			}
 		}
 		span {
+			text-transform: uppercase;
+			font-size: 2.5em;
+			line-height: 1.2em;
+			letter-spacing: 0.2em;
 			margin-left: 0.3em;
 			opacity: 1;
 			display: block;
 			text-shadow: 1px 1px $bg-color, 2px 2px $secondary-color;
-			user-select: none;
-			transition: 0.2s;
 			&:nth-child(1) {
 				margin-top: 130px;
 				color: $primary-color;
@@ -49,6 +51,17 @@ body {
 			}
 			&:nth-child(even) {
 				animation: slideLeft 0.5s;
+			}
+		}
+		.caption {
+			opacity: 0;
+			position: absolute;
+			padding-top: 5px;
+			text-align: center;
+			width: 100%;
+			font-size: 0.6em;
+			i {
+				font-style: normal;
 			}
 		}
 	}
@@ -88,6 +101,9 @@ body {
 				display: none;
 				color: $secondary-color;
 			}
+			&#currentProject {
+				font-weight: bold;
+			}
 		}
 	}
 }
@@ -108,11 +124,14 @@ body {
 @media (max-width: 768px) {
 	.container {
 		font-size: 1.2em;
-		.name {
+		.name span {
 			font-size: 3.5em;
-			span:nth-child(1) {
+			&:nth-child(1) {
 				margin-top: 10%;
 			}
+		}
+		.caption i {
+			display: none;
 		}
 		.content {
 			input[type="radio"]:checked ~ .hiddenLinks {
