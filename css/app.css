@@ -81,6 +81,8 @@ body {
         color: slategrey; }
       .container .content p#currentProject {
         font-weight: bold; }
+      .container .content p#links a {
+        margin-right: 10px; }
 
 @keyframes slideLeft {
   from {
