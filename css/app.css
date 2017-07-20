@@ -1,4 +1,4 @@
-body {
+body, html {
   margin: 0;
   padding: 0;
   background: #FFE000;
@@ -10,79 +10,96 @@ body {
   font-family: "Source Code Pro", monospace;
   margin: 20px auto 0;
   text-align: center;
-  cursor: default; }
-  .container .name {
-    position: relative;
-    display: inline-block;
-    background-image: url();
-    background-size: cover;
-    background-position: top center;
-    opacity: 1; }
-    .container .name:hover {
-      background-image: url("../images/me.jpg"); }
-      .container .name:hover span {
-        opacity: 0; }
-      .container .name:hover .caption {
-        display: block; }
-    .container .name span {
-      text-transform: uppercase;
-      font-size: 2.5em;
-      line-height: 1.2em;
-      letter-spacing: 0.2em;
-      margin-left: 0.3em;
-      opacity: 1;
-      display: block;
-      text-shadow: 1px 1px #FFE000, 2px 2px slategrey; }
-      .container .name span:nth-child(1) {
-        margin-top: 130px;
-        color: crimson; }
-      .container .name span:nth-child(odd) {
-        animation: slideRight 0.5s; }
-      .container .name span:nth-child(even) {
-        animation: slideLeft 0.5s; }
-    .container .name .caption {
-      display: none;
-      position: absolute;
-      padding-top: 5px;
-      text-align: center;
-      width: 100%;
-      font-size: 0.6em; }
-      .container .name .caption i {
-        font-style: normal; }
-  .container .content {
-    margin: 30px 0;
+  cursor: default;
+  font-size: 1.2em; }
+  @media (min-width: 768px) {
+    .container {
+      font-size: 1em; } }
+
+.name {
+  position: relative;
+  display: inline-block;
+  background-image: url();
+  background-size: cover;
+  background-position: top center;
+  opacity: 1; }
+  .name:hover {
+    background-image: url("../images/me.jpg"); }
+    .name:hover span {
+      opacity: 0; }
+    .name:hover .caption {
+      display: block; }
+  .name span {
+    text-transform: uppercase;
+    font-size: 3.5em;
+    line-height: 1.2em;
+    letter-spacing: 0.2em;
+    margin-left: 0.3em;
+    opacity: 1;
+    display: block;
+    user-select: none;
+    text-shadow: 1px 1px #FFE000, 2px 2px slategrey; }
+    @media (min-width: 768px) {
+      .name span {
+        font-size: 2.5em; } }
+    .name span:nth-child(1) {
+      margin-top: 10%;
+      color: crimson; }
+      @media (min-width: 768px) {
+        .name span:nth-child(1) {
+          margin-top: 130px; } }
+    .name span:nth-child(odd) {
+      animation: slideRight 0.5s; }
+    .name span:nth-child(even) {
+      animation: slideLeft 0.5s; }
+  .name .caption {
+    display: none;
+    position: absolute;
+    padding-top: 5px;
+    text-align: center;
+    width: 100%;
+    font-size: 0.6em; }
+    .name .caption i {
+      font-style: normal;
+      display: none; }
+      @media (min-width: 768px) {
+        .name .caption i {
+          display: inline; } }
+
+.content {
+  margin: 30px 0;
+  font-size: 1em;
+  animation: slideUp 0.5s; }
+  .content h2 {
     font-size: 1em;
-    animation: slideUp 0.5s; }
-    .container .content h2 {
-      font-size: 1em;
-      font-weight: normal;
-      margin: 1em 0 0; }
-    .container .content a {
+    font-weight: normal;
+    margin: 1em 0 0; }
+  .content a {
+    color: crimson;
+    cursor: pointer; }
+  .content p {
+    max-width: 600px;
+    margin: 10px auto;
+    padding: 0 25px;
+    font-size: 0.8em;
+    text-transform: none;
+    text-align: justify;
+    user-select: auto; }
+    .content p input[type="checkbox"] {
+      display: none; }
+      .content p input[type="checkbox"]:checked ~ .aboutMeHidden {
+        display: inline; }
+    .content p label {
       color: crimson;
+      text-decoration: underline;
       cursor: pointer; }
-    .container .content p {
-      max-width: 600px;
-      margin: 10px auto;
-      padding: 0 25px;
-      font-size: 0.8em;
-      text-transform: none;
-      text-align: justify;
-      user-select: auto; }
-      .container .content p input[type="checkbox"] {
-        display: none; }
-        .container .content p input[type="checkbox"]:checked ~ .aboutMeHidden {
-          display: inline; }
-      .container .content p label {
-        color: crimson;
-        text-decoration: underline;
-        cursor: pointer; }
-      .container .content p .aboutMeHidden {
-        display: none;
-        color: slategrey; }
-      .container .content p#currentProject {
-        font-weight: bold; }
-      .container .content p#links a {
-        margin-right: 10px; }
+    .content p .aboutMeHidden {
+      display: none;
+      color: slategrey; }
+    .content p#currentProject {
+      font-weight: bold; }
+    .content p#links a {
+      margin-right: 10px; }
 
 @keyframes slideLeft {
   from {
@@ -99,16 +116,5 @@ body {
     transform: translateY(1000px); }
   to {
     transform: translateY(0px); } }
-@media (max-width: 768px) {
-  .container {
-    font-size: 1.2em; }
-    .container .name span {
-      font-size: 3.5em; }
-      .container .name span:nth-child(1) {
-        margin-top: 10%; }
-    .container .caption i {
-      display: none; }
-    .container .content input[type="radio"]:checked ~ .hiddenLinks {
-      height: 40px; } }
 
 /*# sourceMappingURL=app.css.map */
