@@ -79,7 +79,7 @@ body, html {
     cursor: pointer; }
   .content p {
     max-width: 600px;
-    margin: 10px auto;
+    margin: 14px auto;
     padding: 0 25px;
     font-size: 0.8em;
     text-transform: none;
@@ -96,8 +96,6 @@ body, html {
     .content p .aboutMeHidden {
       display: none;
       color: slategrey; }
-    .content p#currentProject {
-      font-weight: bold; }
     .content p#links a {
       margin-right: 10px; }
 
