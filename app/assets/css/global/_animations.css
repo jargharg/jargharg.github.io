@@ -1,0 +1,12 @@
+@keyframes slideLeft {
+	from { transform: translateX(1000px); }
+	to { transform: translateX(0px); }
+}
+@keyframes slideRight {
+	from { transform: translateX(-1000px); }
+	to { transform: translateX(0px); }
+}
+@keyframes slideUp {
+	from { transform: translateY(1000px); }
+	to { transform: translateY(0px); }
+}

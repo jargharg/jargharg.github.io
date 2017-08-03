@@ -1,0 +1,60 @@
+.name {
+    position: relative;
+    display: inline-block;
+    background-image: url();
+    background-size: cover;
+    background-position: top center;
+    opacity: 1;
+    &:hover {
+        background-image: url("../../assets/images/me.jpg");
+        span {
+            opacity: 0;
+        }
+        .caption {
+            display: block;
+        }
+    }
+    span {
+        text-transform: uppercase;
+        font-size: 3.5em;
+        line-height: 1.2em;
+        letter-spacing: 0.2em;
+        margin-left: 0.3em;
+        opacity: 1;
+        display: block;
+        user-select: none;
+        text-shadow: 1px 1px $bg-color, 2px 2px $secondary-color;
+        @media (min-width: 768px) {
+            font-size: 2.5em;
+        }
+        &:nth-child(1) {
+            margin-top: 10%;
+            color: $primary-color;
+            @media (min-width: 768px) {
+                margin-top: 130px;
+            }
+        }
+        &:nth-child(odd) {
+            animation: slideRight 0.5s;
+        }
+        &:nth-child(even) {
+            animation: slideLeft 0.5s;
+        }
+    }
+
+    .caption {
+        display: none;
+        position: absolute;
+        padding-top: 5px;
+        text-align: center;
+        width: 100%;
+        font-size: 0.6em;
+        i {
+            font-style: normal;
+            display: none;
+            @media (min-width: 768px) {
+                display: inline;
+            }
+        }
+    }
+}

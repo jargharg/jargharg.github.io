@@ -1,0 +1,8 @@
+@import "normalize.css";
+@import "global/_mixins";
+@import "global/_animations";
+@import "global/_body";
+@import "modules/_container";
+@import "modules/_name";
+@import "modules/_content";
+
