@@ -5,7 +5,7 @@
     text-align: center;
     cursor: default;
     font-size: 1.2em;
-    @media (min-width: 768px) {
+    @mixin atMedium {
         font-size: 1em;
     }
 }
