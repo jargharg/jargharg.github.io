@@ -1,7 +1,7 @@
 $font-stack: 'Source Code Pro', monospace;
-$bg-color: #FFE000;
+$bg-color: lightcyan;
 $primary-color: crimson;
-$secondary-color: slategrey;
+$secondary-color: darkslategrey;
 
 @define-mixin atMedium {
     @media (min-width: 768px) {
