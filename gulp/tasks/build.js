@@ -12,7 +12,7 @@ gulp.task("deleteAssetsFolder", function() {
 });
 
 gulp.task("optimiseImages", ["deleteAssetsFolder"], function() {
-	return gulp.src(["./app/assets/images/**/*", "!.app/assets/images/icons", "!.app/assets/images/icons/**/*"])
+	return gulp.src(["./app/assets/images/**/*"])
 	.pipe(imagemin({
 		progressive: true,
 		interlaced: true,
