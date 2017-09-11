@@ -35,7 +35,9 @@
             color: $secondary-color;
         }
         &#links a {
-            margin-right: 10px;
+            @mixin atMedium {
+                margin-right: 10px;
+            }
         }
     }
 }
