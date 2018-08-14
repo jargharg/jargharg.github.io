@@ -483,8 +483,8 @@ template {
 body, html {
     margin: 0;
     padding: 0;
-    background: #FFE000;
-    color: slategrey;
+    background: lightcyan;
+    color: darkslategrey;
     -webkit-transition: 0.3s;
     transition: 0.3s;   
 }
@@ -514,19 +514,7 @@ body, html {
     opacity: 1;
 }
 
-.name:hover {
-        background-image: url("../../assets/images/me.jpg");
-    }
-
-.name:hover span {
-            opacity: 0;
-        }
-
-.name:hover .caption {
-            display: block;
-        }
-
-.name span {
+.name__partial {
         text-transform: uppercase;
         font-size: 3.5em;
         line-height: 1.2em;
@@ -538,55 +526,73 @@ body, html {
            -moz-user-select: none;
             -ms-user-select: none;
                 user-select: none;
-        text-shadow: 1px 1px #FFE000, 2px 2px slategrey;
+        text-shadow: 1px 1px lightcyan, 2px 2px darkslategrey;
+        cursor: pointer;
     }
 
 @media (min-width: 768px) {
 
-.name span {
+.name__partial {
             font-size: 2.5em
     }
     }
 
-.name span:nth-child(1) {
+.name__partial:nth-child(1) {
             margin-top: 10%;
             color: crimson;
         }
 
 @media (min-width: 768px) {
 
-.name span:nth-child(1) {
+.name__partial:nth-child(1) {
                 margin-top: 130px
         }
     }
 
-.name span:nth-child(odd) {
+.name__partial:nth-child(odd) {
             -webkit-animation: slideRight 0.5s;
                     animation: slideRight 0.5s;
         }
 
-.name span:nth-child(even) {
+.name__partial:nth-child(even) {
             -webkit-animation: slideLeft 0.5s;
                     animation: slideLeft 0.5s;
         }
 
-.name .caption {
+.name__partial span {
+            float: left;
+        }
+
+@media (min-width: 768px) {
+        .name__show-image {
+            background-image: url("../../assets/images/me.jpg");
+        }
+                .name__show-image .name__partial {
+                    opacity: 0;
+                }
+                .name__show-image .name__caption {
+                    display: block;
+                }
+    }
+
+.name__caption {
         display: none;
         position: absolute;
         padding-top: 5px;
         text-align: center;
         width: 100%;
         font-size: 0.6em;
+        top: 100%;
     }
 
-.name .caption i {
+.name__caption i {
             font-style: normal;
             display: none;
         }
 
 @media (min-width: 768px) {
 
-.name .caption i {
+.name__caption i {
                 display: inline
         }
     }
@@ -638,10 +644,13 @@ body, html {
 
 .content p .aboutMeHidden {
             display: none;
-            color: slategrey;
+            color: darkslategrey;
         }
 
+@media (min-width: 768px) {
+
 .content p#links a {
-            margin-right: 10px;
+                margin-right: 10px
         }
+    }
 
